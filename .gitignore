@@ -37,6 +37,7 @@ mono_crash.*
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+[Ll]ocal/
 x64/
 x86/
 [Aa][Rr][Mm]/
