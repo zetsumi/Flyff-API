@@ -91,3 +91,30 @@ Ajouter les fichiers a votre solutution:
 * APIFlyff.hpp
 * APIFlyff.cpp
 * APIFlyffMessage.cpp
+
+Dans le fichier `ThreadMng.cpp` <bv>
+Ajouter
+```cpp
+#if defined(__API)
+#include "APIFlyff.hpp"
+#endif //__API
+```
+Dans la fonction `BOOL CRunObject::Init(void)`
+```cpp
+#if defined(__API)
+	if (CAPIFlyff::GetInstance().Initialize() == false)
+	{
+		char szMsgError[300] = { 0, };
+		sprintf(szMsgError, "can not initialize API");
+		AfxMessageBox(szMsgError);
+		return FALSE;
+	}
+	if (CAPIFlyff::GetInstance().Connect() == false || CAPIFlyff::GetInstance().Authenticate(1234, "admin") == false)
+	{
+		char szMsgError[300] = { 0, };
+		sprintf(szMsgError, "can not connat at APIServer");
+		AfxMessageBox(szMsgError);
+		return FALSE;
+	}
+#endif // __API
+```

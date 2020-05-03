@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "APIFlyff.hpp"
 
+std::map<char*, cmdAPI>	cmds;
+
+
 bool CAPIFlyff::SetProcessAdress(void)
 {
 	if (hDLL == nullptr)
@@ -12,6 +15,9 @@ bool CAPIFlyff::SetProcessAdress(void)
 	api.putChatMessage = (API_PUT_CHAT_MESSAGE_FLYFF)GetProcAddress(hDLL, "api_put_chat_message");
 	api.putCommand = (API_PUT_COMMAND_FLYFF)GetProcAddress(hDLL, "api_put_command");
 	api.send = (API_SEND)GetProcAddress(hDLL, "api_send");
+
+	cmds["sys"] = &CAPIFlyff::PutCommandSys;
+
 	return true;
 }
 
@@ -90,3 +96,4 @@ void CAPIFlyff::PutCommand(const char* playerName, const char* command)
 		return;
 	api.putCommand(playerName, command);
 }
+
