@@ -27,4 +27,9 @@ public:
 	void	Destroy(void);
 	void	PutChatMessage(unsigned int typeChat, const char* playerName, const char* message);
 	void	PutCommand(const char* playerName, const char* command);
+
+	// Command
+	static void	PutCommandSys(const char* playername, CScanner& scanner);
 };
+
+typedef void	(*cmdAPI)(const char* playername, CScanner& scanner);
