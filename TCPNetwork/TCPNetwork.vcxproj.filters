@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Network">
+      <UniqueIdentifier>{e5a927ca-3e07-48a1-84ea-7830906ab341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Transaction">
+      <UniqueIdentifier>{db0103dc-8931-47ed-8490-a92dc6d687a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{1df704b2-645d-42fa-8ae0-9a39eda8d214}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Sources\TCPNetwork\dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Network\Network.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Network\SocketClient.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Transaction\Transaction.cpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Network\SocketServer.cpp">
+      <Filter>Source Files\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Transaction\TransactionServer.cpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Transaction\TransactionEmit.cpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Transaction\PacketBuilder.cpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\Transaction\TransactionClient.cpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\TCPNetwork\pch_tcp_network.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Sources\TCPNetwork\Network\Network.hpp">
+      <Filter>Source Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\TCPNetwork.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\framework.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Network\SocketClient.hpp">
+      <Filter>Source Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Network\Socket.hpp">
+      <Filter>Source Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Transaction\Transaction.hpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Transaction\PacketStructure.hpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Network\SocketServer.hpp">
+      <Filter>Source Files\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Utils\Logger.hpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Utils\TCPFactory.hpp">
+      <Filter>Source Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Transaction\PacketBuilder.hpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\Transaction\MessageHandler.hpp">
+      <Filter>Source Files\Transaction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\TCPNetwork\pch_tcp_network.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

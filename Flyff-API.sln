@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "APIClient", "APIClient\APIClient.vcxproj", "{414C8479-A016-44F1-8D15-026B36EA1E61}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "APIConnector", "APIConnector\APIConnector.vcxproj", "{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "APIServer", "APIServer\APIServer.vcxproj", "{CB74082B-AE66-4510-9332-B66B2622A059}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TCPNetwork", "TCPNetwork\TCPNetwork.vcxproj", "{D02146AE-6BF7-4BFA-83E2-AD7695011555}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CAPIFlyff", "CAPIFlyff", "{5FB3DCE9-ACB6-4262-B916-728721191493}"
+	ProjectSection(SolutionItems) = preProject
+		Sources\CAPIFlyff\APIFlyff.cpp = Sources\CAPIFlyff\APIFlyff.cpp
+		Sources\CAPIFlyff\APIFlyff.hpp = Sources\CAPIFlyff\APIFlyff.hpp
+		Sources\CAPIFlyff\APIFlyffMessage.cpp = Sources\CAPIFlyff\APIFlyffMessage.cpp
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Local|x64 = Local|x64
+		Local|x86 = Local|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Local|x64.ActiveCfg = Local|x64
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Local|x64.Build.0 = Local|x64
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Local|x86.ActiveCfg = Local|Win32
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Local|x86.Build.0 = Local|Win32
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Release|x64.ActiveCfg = Release|x64
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Release|x64.Build.0 = Release|x64
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Release|x86.ActiveCfg = Release|Win32
+		{414C8479-A016-44F1-8D15-026B36EA1E61}.Release|x86.Build.0 = Release|Win32
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Local|x64.ActiveCfg = Local|x64
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Local|x64.Build.0 = Local|x64
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Local|x86.ActiveCfg = Local|Win32
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Local|x86.Build.0 = Local|Win32
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Release|x64.ActiveCfg = Release|x64
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Release|x64.Build.0 = Release|x64
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Release|x86.ActiveCfg = Release|Win32
+		{8EDA88BE-D7C6-4100-BCB8-C31D8335F290}.Release|x86.Build.0 = Release|Win32
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Local|x64.ActiveCfg = Local|x64
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Local|x64.Build.0 = Local|x64
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Local|x86.ActiveCfg = Local|Win32
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Local|x86.Build.0 = Local|Win32
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Release|x64.ActiveCfg = Release|x64
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Release|x64.Build.0 = Release|x64
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Release|x86.ActiveCfg = Release|Win32
+		{CB74082B-AE66-4510-9332-B66B2622A059}.Release|x86.Build.0 = Release|Win32
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Local|x64.ActiveCfg = Local|x64
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Local|x64.Build.0 = Local|x64
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Local|x86.ActiveCfg = Local|Win32
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Local|x86.Build.0 = Local|Win32
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Release|x64.ActiveCfg = Release|x64
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Release|x64.Build.0 = Release|x64
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Release|x86.ActiveCfg = Release|Win32
+		{D02146AE-6BF7-4BFA-83E2-AD7695011555}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3C08E6DA-3FEE-4AE9-9957-06C8163C0C27}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+{
+  "name": "flyffbotdiscord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "net": "^1.0.2"
+  }
+}
