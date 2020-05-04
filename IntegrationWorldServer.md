@@ -4,7 +4,6 @@ Suivez les etapes afin d'integrer la classe `CAPIFlyff` dans la solution `WorldS
 ## Solution
 Dans le projet `WorldServer` ajouter les chemin d'inclusions :
 ```
-Flyff-API\Sources\TCPNetwork\Packet\ //Dossier non existant
 Flyff-API\Sources\TCPNetwork\Transaction\
 Flyff-API\Sources\TCPNetwork\
 Flyff-API\Sources\CAPIFlyff\
