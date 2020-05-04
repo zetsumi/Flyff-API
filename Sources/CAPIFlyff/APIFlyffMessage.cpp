@@ -9,7 +9,6 @@
 #include "eveschool.h"
 #include "WorldDialog.h"
 #include "ItemUpgrade.h"
-#include "UserMng.h"
 #include "DPCoreClient.h"
 
 extern	CDPCoreClient		g_DPCoreClient;
