@@ -3,7 +3,6 @@
 Projet permetant de communiquer avec le serveur via des clients extern telque les `bots discord`. <br>
 Le projet est constituer de solutions `TCPNetwork`, `APIConnector`, `APIServer`, `APIClient`. <br>
 
-
 ## TCPNetwork
 Bibliotheque permettant d'effectuer une connexion et d'envoyer des messages via le protocol `TCP`. <br>
 Language : `C++ 14`. <br>
@@ -18,8 +17,8 @@ Executable repressentant le serveur Back-End. Il fait relier entre les serveur `
 ## APIClient
 Executable permettant de tester les echanges entre les differentes partie --> SANDBOX.
 
-
-# Utilisation
+## Structure du projet
+![](UML.png)
 
 ## Packet Structure
 
@@ -72,49 +71,3 @@ Un client doit obligatoirement s'authentifier afin de definir sont `type` la lis
 ## Initialisation
 Modifier les fichier `config.json` afin qu'il correspond a votre ID discord.
 
-
-# Structure du projet
-![](UML.png)
-
-
-# Integration WorldServer
-Dans le projet `WorldServer` ajouter les chemin d'inclusions :
-```
-Flyff-API\Sources\TCPNetwork\Packet\
-Flyff-API\Sources\TCPNetwork\Transaction\
-Flyff-API\Sources\TCPNetwork\
-Flyff-API\Sources\CAPIFlyff\
-Flyff-API\Sources\
-```
-Ajouter les fichiers a votre solutution:
-* APIFlyffPacketType.hpp
-* APIFlyff.hpp
-* APIFlyff.cpp
-* APIFlyffMessage.cpp
-
-Dans le fichier `ThreadMng.cpp` <bv>
-Ajouter
-```cpp
-#if defined(__API)
-#include "APIFlyff.hpp"
-#endif //__API
-```
-Dans la fonction `BOOL CRunObject::Init(void)`
-```cpp
-#if defined(__API)
-	if (CAPIFlyff::GetInstance().Initialize() == false)
-	{
-		char szMsgError[300] = { 0, };
-		sprintf(szMsgError, "can not initialize API");
-		AfxMessageBox(szMsgError);
-		return FALSE;
-	}
-	if (CAPIFlyff::GetInstance().Connect() == false || CAPIFlyff::GetInstance().Authenticate(1234, "admin") == false)
-	{
-		char szMsgError[300] = { 0, };
-		sprintf(szMsgError, "can not connat at APIServer");
-		AfxMessageBox(szMsgError);
-		return FALSE;
-	}
-#endif // __API
-```
