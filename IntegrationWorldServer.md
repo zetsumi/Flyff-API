@@ -4,7 +4,6 @@ Suivez les etapes afin d'integrer la classe `CAPIFlyff` dans la solution `WorldS
 ## Solution
 Dans le projet `WorldServer` ajouter les chemin d'inclusions :
 ```
-Flyff-API\Sources\TCPNetwork\Packet\
 Flyff-API\Sources\TCPNetwork\Transaction\
 Flyff-API\Sources\TCPNetwork\
 Flyff-API\Sources\CAPIFlyff\
@@ -91,7 +90,7 @@ Dans la fonction ___void CDPSrvr::OnChat(CAr & ar, DPID dpidCache, DPID dpidUser
 #endif //__API
 ```
 
-### UserMng.h
+### User.h
 Ajouter dans la class `CUserMng` :
 ```cpp
 #if defined(__API)
@@ -99,7 +98,7 @@ Ajouter dans la class `CUserMng` :
 #endif //__API
 ```
 
-### UserMng.cpp
+### User.cpp
 ```cpp
 #if defined(__API)
 void CUserMng::AddShoutFromDiscord(const char* playerName, const char* message)
@@ -124,32 +123,4 @@ void CUserMng::AddShoutFromDiscord(const char* playerName, const char* message)
     }
 }
 #endif //__API
-```
-
-
-### ThreadMng.cpp
-```cpp
-#if defined(__API)
-#include "APIFlyff.hpp"
-#endif //__API
-```
-
-Dans la function ___BOOL CRunObject::Init(void)___
-```cpp
-#if defined(__API)
-	if (CAPIFlyff::GetInstance().Initialize() == false)
-	{
-		char szMsgError[300] = { 0, };
-		sprintf(szMsgError, "can not initialize API");
-		AfxMessageBox(szMsgError);
-		return FALSE;
-	}
-	if (CAPIFlyff::GetInstance().Connect() == false || CAPIFlyff::GetInstance().Authenticate(1234, "admin") == false)
-	{
-		char szMsgError[300] = { 0, };
-		sprintf(szMsgError, "can not connat at APIServer");
-		AfxMessageBox(szMsgError);
-		return FALSE;
-	}
-#endif // __API
 ```
