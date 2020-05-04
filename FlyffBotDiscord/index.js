@@ -81,6 +81,8 @@ client.on('message', message => {
                 msgH.builder.writeString(message.toString())
                 let buffer = msgH.builder.getData()
                 nclient.write(buffer)    
+				message.delete()
+                message.channel.send(`Commande effectuée par ${message.author.username} : "${message.toString()}"`)
             }
         }
     }
