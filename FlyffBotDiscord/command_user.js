@@ -12,7 +12,6 @@ class CommandUser
             return false
         }
         for (let it of this.list_cmd) {
-            console.log(`[${it}] [${command}]`)
             if (command.includes(it) === true) {
                 return true
             }
