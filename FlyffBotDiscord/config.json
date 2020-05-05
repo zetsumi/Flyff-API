@@ -1,16 +1,15 @@
 {
-    "id_dev_bot": "696626104131256362",
-    "token": "Njk2NjI2MTA0MTMxMjU2MzYy.XqiEog.GNH-YecIuhxqwFwgq1YUGxXm-Sk",
+    "id_dev_bot": "enter your id bot from author discord",
+    "token": "enter your TOKEN BOT",
     "port": 27015,
     "channels": {
-        "general": "704769971502186516",
-        "shout": "705065659448557619",
-        "command": "705065529014091816"
+        "general": "enter your ID channel general",
+        "shout": "enter your ID channel shout",
+        "command": "enter your ID channel command"
     },
     "auth" : {
         "key": 1234,
         "login": [
-            "zetsumi",
             "admin"
         ]
     }
