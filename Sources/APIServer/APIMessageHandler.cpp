@@ -86,6 +86,7 @@ void APIMessageHandler::onPutChatMessage(SOCKET id, PacketBuilder& pb)
 
 	if (g_bots.is(id) == false)
 		g_bots.sendAll(length, buffer);
+
 	if (g_servers.is(id) == false)
 		g_servers.sendAll(length, buffer);
 }
