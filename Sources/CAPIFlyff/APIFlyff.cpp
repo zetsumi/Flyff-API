@@ -27,6 +27,11 @@ CAPIFlyff& CAPIFlyff::GetInstance(void)
 	return std::ref(instance);
 }
 
+bool CAPIFlyff::IsConnected(void)
+{
+	return connected;
+}
+
 bool	CAPIFlyff::Initialize(void)
 {
 	hDLL = LoadLibraryW(L"APIConnectord.dll");
@@ -39,11 +44,14 @@ bool	CAPIFlyff::Initialize(void)
 
 bool CAPIFlyff::Connect()
 {
+	connected = false;
 	if (api.initialize == nullptr)
-		return false;
+		goto end;
 	if (api.initialize(27015, "127.0.0.1", &CAPIFlyff::onMsg) == false)
-		return false;
-	return true;
+		goto end;
+	connected = true;
+end:
+	return connected;
 }
 
 bool CAPIFlyff::SendBuffer(PacketBuilder& pb)
