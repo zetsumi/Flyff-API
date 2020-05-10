@@ -8,6 +8,7 @@ class CAPIFlyff
 {
 	HINSTANCE hDLL = nullptr;
 	api_flyff_function	api = api_flyff_function();
+	bool	connected = false;
 
 	CAPIFlyff() = default;
 	bool	SetProcessAdress(void);
@@ -19,6 +20,8 @@ public:
 	static void	onAuthenticate(SOCKET id, PacketBuilder& pb);
 	static void	onPutChatMessage(SOCKET id, PacketBuilder& pb);
 	static void	onPutCommand(SOCKET id, PacketBuilder& pb);
+
+	bool	IsConnected(void);
 
 	bool	Initialize(void);
 	bool	Connect(void);

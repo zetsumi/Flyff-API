@@ -10,25 +10,31 @@ class   MessageHandler {
     }
 
     onMsg() {
-        switch(this.builder.type) {
-            case this.packetType.SEND_BUFFER : {
-                console.log(`free style packet send`)
-                break;
+        while (this.builder.offset < this.builder.length) {
+            switch(this.builder.type) {
+                case this.packetType.SEND_BUFFER : {
+                    console.log(`free style packet send`)
+                    break;
+                }
+                case this.packetType.AUTHENTICATE: {
+                    console.log(`authenticate`)
+                    this.onAuthenticate()
+                }break;
+                case  this.packetType.PUT_CHAT_MESSAGE: {
+                    console.log(`Put Chat Message`)
+                    this.onPutGeneral()
+                } break;
+                case  this.packetType.PUT_COMMAND: {
+                    console.log(`Put Chat Command`)
+                    this.onPutCommand()
+                }
+                default : {
+                    console.log(`unknow${this.builder.type}`)
+                }
             }
-            case this.packetType.AUTHENTICATE: {
-                console.log(`authenticate`)
-                this.onAuthenticate()
-            }break;
-            case  this.packetType.PUT_CHAT_MESSAGE: {
-                console.log(`Put Chat Message`)
-                this.onPutGeneral()
-            } break;
-            case  this.packetType.PUT_COMMAND: {
-                console.log(`Put Chat Command`)
-                this.onPutCommand()
-            }
-            default : {
-                console.log(`unknow${this.builder.type}`)
+            if (this.builder.offset < this.builder.length) {
+                let sizePacket = this.readInt();
+                this.builder.type = this.readInt();
             }
         }
         this.builder.offset = 0
