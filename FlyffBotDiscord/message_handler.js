@@ -10,7 +10,7 @@ class   MessageHandler {
     }
 
     onMsg() {
-        while (this.builder.offset < this.builder.length) {
+        while (this.builder.offset < this.builder.packet.length) {
             switch(this.builder.type) {
                 case this.packetType.SEND_BUFFER : {
                     console.log(`free style packet send`)
@@ -32,10 +32,8 @@ class   MessageHandler {
                     console.log(`unknow${this.builder.type}`)
                 }
             }
-            if (this.builder.offset < this.builder.length) {
-                let sizePacket = this.readInt();
-                this.builder.type = this.readInt();
-            }
+            this.builder.length = this.builder.readInt();
+            this.builder.type = this.builder.readInt();
         }
         this.builder.offset = 0
     }
@@ -58,10 +56,10 @@ class   MessageHandler {
         let playerName = this.builder.readString()
         let message = this.builder.readString()
 
-        if (typeChat == 0)
+        if (typeChat == 0) {
             this.channel_general.send(`${playerName}: ${message}`)
-        else if (typeChat == 1)
-        {
+        }
+        else if (typeChat == 1) {
             message = message.replace('/s', '')
             message = message.replace('/shout', '')
             this.channel_shout.send(`${playerName}: ${message}`)
