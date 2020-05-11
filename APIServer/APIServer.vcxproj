@@ -157,6 +157,14 @@
     <ClInclude Include="..\Sources\APIFlyffPacketType.hpp" />
     <ClInclude Include="..\Sources\APIServer\APIMessageHandler.hpp" />
     <ClInclude Include="..\Sources\APIServer\ClientAPI.hpp" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="APIServer.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\apiserver.ico" />
+    <Image Include="icon1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
