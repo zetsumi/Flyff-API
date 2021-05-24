@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#if defined(__API)
 #include "APIFlyff.hpp"
 
 #include "User.h"
@@ -74,3 +76,4 @@ void CAPIFlyff::onPutCommand(SOCKET id, PacketBuilder& pb)
 	}
 }
 
+#endif //__API

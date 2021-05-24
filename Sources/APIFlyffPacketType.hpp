@@ -1,5 +1,6 @@
 #pragma once
 
+#if !defined(__WORLDSERVER) || defined(__API)
 enum class API_FLYFF_AUTHENTICATE : unsigned int
 {
 	SERVER_FLYFF,
@@ -14,3 +15,4 @@ enum class API_PACKET_TYPE : unsigned int
 	PUT_CHAT_MESSAGE,
 	PUT_COMMAND,
 };
+#endif //__API

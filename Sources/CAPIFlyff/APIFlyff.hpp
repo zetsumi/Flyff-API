@@ -1,5 +1,6 @@
 #pragma once
 
+#if defined(__API)
 #include <Windows.h>
 #include "APIConnector.hpp"
 #include "PacketBuilder.hpp"
@@ -25,14 +26,15 @@ public:
 
 	bool	Initialize(void);
 	bool	Connect(void);
-	bool	SendBuffer(PacketBuilder& pb);
 	bool	Authenticate(unsigned int key, const char* login);
 	void	Destroy(void);
 	void	PutChatMessage(unsigned int typeChat, const char* playerName, const char* message);
 	void	PutCommand(const char* playerName, const char* command);
+	bool	SendBuffer(PacketBuilder& pb);
 
 	// Command
 	static void	PutCommandSys(const char* playername, CScanner& scanner);
 };
 
 typedef void	(*cmdAPI)(const char* playername, CScanner& scanner);
+#endif //__API

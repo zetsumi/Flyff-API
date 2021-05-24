@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#if defined(__API)
 #include "APIFlyff.hpp"
 
 std::map<char*, cmdAPI>	cmds;
@@ -34,11 +36,13 @@ bool CAPIFlyff::IsConnected(void)
 
 bool	CAPIFlyff::Initialize(void)
 {
+#if defined(__API)
 	hDLL = LoadLibraryW(L"APIConnectord.dll");
 	if (hDLL == nullptr)
 		return false;
 	if (SetProcessAdress() == false)
 		return false;
+#endif //__API
 	return true;
 }
 
@@ -105,3 +109,4 @@ void CAPIFlyff::PutCommand(const char* playerName, const char* command)
 	api.putCommand(playerName, command);
 }
 
+#endif //__API
